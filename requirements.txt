@@ -21,3 +21,4 @@ pytorch-tabnet
 captum
 dill
 graphviz
+streamlit-extras  
