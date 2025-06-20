@@ -4,11 +4,11 @@ Runs top to bottom every time the user interacts with the app (other than import
 """
 import subprocess
 
-# Always install dice-ml on Streamlit Cloud at startup
 try:
     subprocess.run(["bash", "xgboost_req.sh"], check=True)
 except Exception as e:
-    print("Startup script failed:", e)
+    print("Failed to run xgboost_req.sh:", e)
+
 
 from pathlib import Path
 import sys

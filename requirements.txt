@@ -1,5 +1,5 @@
 numpy==1.24.4
-pandas==2.1.4
+pandas==1.5.3  # ✅ Compatible with dice-ml
 requests==2.29.0
 streamlit==1.31.0
 fastapi==0.104.1
@@ -21,5 +21,4 @@ pytorch-tabnet
 captum
 dill
 graphviz
-raiutils==0.4.2
-jsonschema==4.23.0
+tqdm  # ✅ Needed by dice-ml
