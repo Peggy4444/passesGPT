@@ -446,55 +446,55 @@ with tab3:
 
     chat.display_messages()
 
-with tab4:
-    st.header("TabNet")
-    pass_df_tabnet = pass_df.drop(['speed_difference'],axis=1)
-    st.write(pass_df_tabnet.astype(str))
+# with tab4:
+#     st.header("TabNet")
+#     pass_df_tabnet = pass_df.drop(['speed_difference'],axis=1)
+#     st.write(pass_df_tabnet.astype(str))
 
 
 
-    st.markdown("<h3 style='font-size:18px; color:black;'>Feature contribution from TabNet model</h3>", unsafe_allow_html=True)
-    feature_contrib_tabnet = pass_data.contributions_tabnet
-    st.write(feature_contrib_tabnet.astype(str))
-    contributions_tabnet = pass_data.contributions_tabnet
+#     st.markdown("<h3 style='font-size:18px; color:black;'>Feature contribution from TabNet model</h3>", unsafe_allow_html=True)
+#     feature_contrib_tabnet = pass_data.contributions_tabnet
+#     st.write(feature_contrib_tabnet.astype(str))
+#     contributions_tabnet = pass_data.contributions_tabnet
 
 
-    descriptions = PassDescription_TabNet(pass_data,contributions_tabnet,pass_id, selected_competition)
+#     descriptions = PassDescription_TabNet(pass_data,contributions_tabnet,pass_id, selected_competition)
     
-    to_hash = ("TabNet",selected_match_id, pass_id)
-    summaries = descriptions.stream_gpt()
-    chat = create_chat(to_hash, Chat)
+#     to_hash = ("TabNet",selected_match_id, pass_id)
+#     summaries = descriptions.stream_gpt()
+#     chat = create_chat(to_hash, Chat)
 
-        # Define which features to plot (exclude non-feature columns)
-    excluded_columns = ['Predicted_Probability', 'id', 'match_id']
-    metrics = [col for col in feature_contrib_tabnet.columns if col not in excluded_columns]
+#         # Define which features to plot (exclude non-feature columns)
+#     excluded_columns = ['Predicted_Probability', 'id', 'match_id']
+#     metrics = [col for col in feature_contrib_tabnet.columns if col not in excluded_columns]
 
-        # Build and show the contribution plot
-    st.markdown("<h3 style='font-size:18px; color:black;'>TabNet contribution plot</h3>", unsafe_allow_html=True)
+#         # Build and show the contribution plot
+#     st.markdown("<h3 style='font-size:18px; color:black;'>TabNet contribution plot</h3>", unsafe_allow_html=True)
 
-    visuals_tabnet = PassContributionPlot_TabNet(feature_contrib_tabnet=feature_contrib_tabnet, pass_df_tabnet=pass_df_tabnet, metrics=metrics)
-    visuals_tabnet.add_passes(pass_df_tabnet, metrics, selected_pass_id=selected_pass_id)
-    visuals_tabnet.add_pass(feature_contrib_tabnet=feature_contrib_tabnet, pass_df_tabnet=pass_df_tabnet,
-                                pass_id=selected_pass_id, metrics=metrics, selected_pass_id=selected_pass_id)
-    visuals_tabnet.show()
+#     visuals_tabnet = PassContributionPlot_TabNet(feature_contrib_tabnet=feature_contrib_tabnet, pass_df_tabnet=pass_df_tabnet, metrics=metrics)
+#     visuals_tabnet.add_passes(pass_df_tabnet, metrics, selected_pass_id=selected_pass_id)
+#     visuals_tabnet.add_pass(feature_contrib_tabnet=feature_contrib_tabnet, pass_df_tabnet=pass_df_tabnet,
+#                                 pass_id=selected_pass_id, metrics=metrics, selected_pass_id=selected_pass_id)
+#     visuals_tabnet.show()
     
 
 
-    #model = Passes.load_model(selected_competition, show_summary=False)
-    #  Show predicted xT value
+#     #model = Passes.load_model(selected_competition, show_summary=False)
+#     #  Show predicted xT value
 
-    # Show predicted xT value from TabNet
-    xt_value_tabnet = feature_contrib_tabnet[feature_contrib_tabnet['id'] == pass_id]['Predicted_Probability']
-    xt_value_tabnet = xt_value_tabnet.iloc[0] if not xt_value_tabnet.empty else "N/A"
+#     # Show predicted xT value from TabNet
+#     xt_value_tabnet = feature_contrib_tabnet[feature_contrib_tabnet['id'] == pass_id]['Predicted_Probability']
+#     xt_value_tabnet = xt_value_tabnet.iloc[0] if not xt_value_tabnet.empty else "N/A"
 
-    #  Pitch visual
-    visuals = PassVisual(metric=None)
-    visuals.add_pass(pass_data, pass_id, home_team_color="green", away_team_color="red")
-    visuals.show()
-    if summaries:
-        chat.add_message(summaries)
+#     #  Pitch visual
+#     visuals = PassVisual(metric=None)
+#     visuals.add_pass(pass_data, pass_id, home_team_color="green", away_team_color="red")
+#     visuals.show()
+#     if summaries:
+#         chat.add_message(summaries)
 
-    chat.display_messages()
+#     chat.display_messages()
 
 
 
