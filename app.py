@@ -29,12 +29,11 @@ displaytext = """## About Twelve GPT Educational """
 st.markdown(displaytext)
 
 displaytext = (
-    """TwelveGPT Educational is a framework for creating data-driven chatbots. The design and code for this project was by Matthias Green, David Sumpter and Ágúst Pálmason Morthens. \n\n"""
-    """The code is set up in a general way, to allow users to build bots which talk about data. """
-    """The football scout bot displays a distribution plot of a football player's performance in various metrics. It then starts a chat giving an AI generated summary of the player's performance and asks a variety of questions about the player. \n\n"""
-    """This is **not** the [Twelve GPT product](https://twelve.football/), but rather a (very) stripped down version of our code """
-    """to help people who would like to learn how to build bots to talk about football data. There are lots of things which [Twelve GPT](https://twelve.football/) can do, which TwelveGPT Educational cannot do. But we want more people to learn about the methods we use and to do this **TwelveGPT Educational** is an excellent alternative. We have thus used the the GNU GPL license which requires that all the released improved versions are also be free software. This will allow us to learn from each other in developing better. \n\n """
-    """If you work for a footballing organisation and would like to see a demo of the full Twelve GPT product then please email us at hello@twelve.football. """
+    """This app analyzes and describes the expected threat (xT) of football passes using various machine learning and explainability methods. It provides visualizations and AI-generated commentary to help users understand what makes a pass valuable, using models like XGBoost and xNN, as well as SHAP for feature contributions.\n\n"""
+    """The project was developed as part of a research-driven initiative to explore interpretable football analytics. It is designed to support scouts, analysts, and enthusiasts in gaining insights into passing decisions through explainable AI. \n\n"""
+    """The full codebase is available at [GitHub Repository](https://github.com/Peggy4444/passesGPT/tree/main), and contributions or feedback are welcome. \n\n"""
+    """This app builds on the educational spirit of tools like TwelveGPT, aiming to make football data science more accessible. While it is not affiliated with the TwelveGPT product, it shares a similar philosophy of using data to support storytelling and decision-making in football."""
 )
+
 
 st.markdown(displaytext)
