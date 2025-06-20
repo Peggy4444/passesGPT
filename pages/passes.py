@@ -32,8 +32,8 @@ import numpy as np
 import argparse
 import tiktoken
 import os
-from utils.utils import normalize_text
-from utils.utils import SimplerNet
+#from utils.utils import normalize_text
+#from utils.utils import SimplerNet
 
 
 #from classes.visual import PassVisual_logistic as PassVisual
