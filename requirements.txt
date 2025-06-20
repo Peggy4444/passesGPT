@@ -1,4 +1,4 @@
-# Core dependencies (verified for Python 3.13.5)
+# Core dependencies
 numpy>=2.0.0
 streamlit>=1.32.0
 pandas>=2.2.0
@@ -15,18 +15,18 @@ tiktoken
 xgboost==2.0.3
 shap>=0.44.0
 
-# Data visualization (using last compatible versions)
-matplotlib==3.7.3  # Last version with wide compatibility
+# Data visualization
+matplotlib==3.8.2  # Newest version with Python 3.13 support
 plotly==5.24.1
 mplsoccer==1.1.10
 
 # Stats/Data science
 statsmodels>=0.14.0
 
-# PyTorch (CPU-only build for stability)
-torch==2.3.0+cpu --index-url https://download.pytorch.org/whl/cpu
-torchvision==0.18.0+cpu --index-url https://download.pytorch.org/whl/cpu
-torchaudio==2.3.0+cpu --index-url https://download.pytorch.org/whl/cpu
+# PyTorch (using current stable version)
+torch==2.3.0  # Let pip find the compatible build
+torchvision==0.18.0
+torchaudio==2.3.0
 
 # Utilities
 python-jose==3.3.0
