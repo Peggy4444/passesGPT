@@ -16,17 +16,17 @@ xgboost==2.0.3
 shap>=0.44.0
 
 # Data visualization
-matplotlib==3.8.2  # Newest version with Python 3.13 support
+matplotlib==3.8.2
 plotly==5.24.1
 mplsoccer==1.1.10
 
 # Stats/Data science
 statsmodels>=0.14.0
 
-# PyTorch (using current stable version)
-torch==2.3.0  # Let pip find the compatible build
-torchvision==0.18.0
-torchaudio==2.3.0
+# PyTorch (using latest stable that supports Python 3.13)
+torch>=2.5.0  # First version with official Python 3.13 support
+torchvision>=0.18.0
+torchaudio>=2.5.0
 
 # Utilities
 python-jose==3.3.0
