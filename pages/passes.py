@@ -1,35 +1,6 @@
 # Library imports
 from pathlib import Path
 import sys
-import os
-import subprocess
-
-
-# Only install dice-ml and others if running on Streamlit Cloud
-if os.environ.get("STREAMLIT_RUNTIME", "").lower() == "streamlit":
-    print("🛠 Installing dice-ml and custom packages on Streamlit Cloud...")
-
-    try:
-        subprocess.run(
-            ["pip", "install", "dice-ml==0.11", "--no-deps"],
-            check=True,
-        )
-        subprocess.run(
-            ["pip", "install", "raiutils==0.4.2"],
-            check=True,
-        )
-        subprocess.run(
-            ["pip", "install", "jsonschema==4.23.0"],
-            check=True,
-        )
-        subprocess.run(
-            ["pip", "install", "tqdm"],
-            check=True,
-        )
-        print("✅ All extra packages installed!")
-    except subprocess.CalledProcessError as e:
-        print("⚠️ Package install failed:", e)
-
 
 #importing necessary libraries
 from mplsoccer import Sbopen

@@ -2,14 +2,6 @@
 Entrypoint for streamlit app.
 Runs top to bottom every time the user interacts with the app (other than imports and cached functions).
 """
-import subprocess
-
-try:
-    subprocess.run(["bash", "xgboost_req.sh"], check=True)
-except Exception as e:
-    print("Failed to run xgboost_req.sh:", e)
-
-
 from pathlib import Path
 import sys
 path_root = Path(__file__).parents[1]
