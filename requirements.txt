@@ -1,36 +1,23 @@
-# Core dependencies (pinned for stability)
-numpy==1.26.4
+numpy==1.24.4
 pandas==2.1.4
+requests==2.29.0
 streamlit==1.31.0
-
-# Web/API frameworks
-requests==2.31.0
 fastapi==0.104.1
 uvicorn==0.24.0.post1
-
-# AI/ML packages
 openai==0.28.1
 google-generativeai==0.7.2
-tiktoken==0.5.2
-xgboost==2.0.3
-shap==0.41.0  # Downgraded for Py3.10 compatibility
-
-# Data visualization
+tiktoken
+python-jose==3.3.0
+customerio==2.1
+mplsoccer==1.1.10
+statsmodels
 matplotlib==3.7.3
 plotly==5.24.1
-mplsoccer==1.1.10
-
-# Stats/Data science
-statsmodels==0.13.5  # Last version with full Py3.10 support
-
-# PyTorch (CPU-only for smaller image)
-torch==2.0.1+cpu --index-url https://download.pytorch.org/whl/cpu
-torchvision==0.15.2+cpu --index-url https://download.pytorch.org/whl/cpu
-torchaudio==2.0.2+cpu --index-url https://download.pytorch.org/whl/cpu
-
-# Utilities
-python-jose==3.3.0
-toml==0.10.2
-dill==0.3.7
-# graphviz installed via apt in Dockerfile
-streamlit-extras==0.2.9
+xgboost==2.0.3
+shap==0.41.0
+torch==2.0.1
+toml
+pytorch-tabnet
+captum
+dill
+graphviz
