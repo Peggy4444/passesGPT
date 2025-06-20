@@ -10,6 +10,6 @@ fastReruns = true
 [client]
 showSidebarNavigation = false
 
-[general]
+[global]
 pythonVersion = "3.10"
 
