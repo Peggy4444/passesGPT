@@ -10,16 +10,17 @@ tiktoken
 python-jose==3.3.0
 #customerio==2.1
 mplsoccer==1.1.10
-#statsmodels==0.14.0
 statsmodels>=0.14.0
 matplotlib==3.7.3
 plotly==5.24.1
 xgboost==2.0.3
 shap==0.41.0
-# torch==2.0.1
+torch==2.3.0  # Updated for Python 3.13 support
+torchvision==0.18.0  # Required with torch 2.3.0
+torchaudio==2.3.0  # Required with torch 2.3.0
 toml
-#pytorch-tabnet==4.0
-#captum==0.6.0
+#pytorch-tabnet==4.0  # Not yet compatible with Python 3.13
+#captum==0.6.0  # Check for newer version (>=0.7.0)
 dill
 graphviz
 streamlit-extras
