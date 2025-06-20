@@ -15,6 +15,8 @@ matplotlib==3.7.3
 plotly==5.24.1
 xgboost==2.0.3
 shap==0.41.0
+dice-ml==0.9  # Added missing package
+
 torch==2.0.1
 toml
 pytorch-tabnet
