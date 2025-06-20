@@ -1,40 +1,25 @@
-# Core dependencies
-numpy==1.23.5
-pandas==1.5.3
+numpy==1.24.4
+pandas==2.1.4
+requests==2.29.0
 streamlit==1.31.0
-
-# AI/ML packages
-shap==0.41.0
-xgboost==1.7.5
-dice-ml==0.9
-
-# Web/API frameworks
-requests==2.31.0
 fastapi==0.104.1
 uvicorn==0.24.0.post1
-
-# Data processing
-scikit-learn==1.2.2
 openai==0.28.1
 google-generativeai==0.7.2
-tiktoken==0.5.2
-
-# Visualization
+tiktoken
+python-jose==3.3.0
+customerio==2.1
+mplsoccer==1.1.10
+statsmodels
 matplotlib==3.7.3
 plotly==5.24.1
-mplsoccer==1.1.10
-
-# Stats
-statsmodels==0.13.5
-
-# PyTorch (corrected installation)
-torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
-torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cpu
-torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cpu
-
-# Utilities (with version fixes)
-python-jose==3.3.0
-toml==0.10.2
-dill==0.3.7
-streamlit-extras==0.2.9
-rich==13.7.1  # Explicitly pinned to compatible version
+xgboost==2.0.3
+shap==0.41.0
+torch==2.0.1
+toml
+pytorch-tabnet
+captum
+dill
+graphviz
+raiutils==0.4.2
+jsonschema==4.23.0

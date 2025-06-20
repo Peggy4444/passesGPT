@@ -32,8 +32,8 @@ import numpy as np
 import argparse
 import tiktoken
 import os
-#from utils.utils import normalize_text
-#from utils.utils import SimplerNet
+from utils.utils import normalize_text
+from utils.utils import SimplerNet
 
 
 #from classes.visual import PassVisual_logistic as PassVisual
@@ -56,6 +56,17 @@ from classes.visual import PassContributionPlot_Bayesian
 #from classes.data_source import show_mimic_tree_in_streamlit
 #from classes.data_source import generate_pass_counterfactuals_by_id
 #from classes.visual import CounterfactualContributionPlot_XGBoost
+
+import os
+import subprocess
+
+# Only run once to install dice-ml on Streamlit Cloud
+if os.environ.get("STREAMLIT_ENV") == "cloud":
+    try:
+        subprocess.run(["pip", "install", "dice-ml==0.11", "--no-deps"], check=True)
+    except Exception as e:
+        print("dice-ml installation failed:", e)
+
 
 
     

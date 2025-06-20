@@ -1,30 +1,30 @@
-# Use official Python 3.10 image
-FROM python:3.10.13-slim-bookworm
+FROM python:3.10-slim
 
-# Set working directory
+# Set the working directory
 WORKDIR /app
 
-# Install system dependencies first
+# Install system tools and compilers
 RUN apt-get update && \
-    apt-get install -y \
-    graphviz \
-    && rm -rf /var/lib/apt/lists/*
+    apt-get install -y gcc python3-dev g++ && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first for caching
+# Copy requirements first to take advantage of Docker cache
 COPY requirements.txt .
+COPY xgboost_req.sh .
 
-# Install Python packages
-RUN pip install --no-cache-dir -r requirements.txt
+# Upgrade pip and install Python dependencies
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-# Copy all files
+# Make sure the script is executable and run it
+RUN chmod +x xgboost_req.sh && \
+    ./xgboost_req.sh
+
+# Copy the rest of the app's code
 COPY . .
 
-# Expose Streamlit's default port
+# Expose the Streamlit default port
 EXPOSE 8501
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8501/_stcore/health
-
-# Run Streamlit
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Command to run the app
+CMD ["streamlit", "run", "app.py"]
