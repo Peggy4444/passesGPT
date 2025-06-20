@@ -2,6 +2,14 @@
 Entrypoint for streamlit app.
 Runs top to bottom every time the user interacts with the app (other than imports and cached functions).
 """
+import subprocess
+
+# Always install dice-ml on Streamlit Cloud at startup
+try:
+    subprocess.run(["bash", "xgboost_req.sh"], check=True)
+except Exception as e:
+    print("Startup script failed:", e)
+
 from pathlib import Path
 import sys
 path_root = Path(__file__).parents[1]
