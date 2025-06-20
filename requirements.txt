@@ -1,11 +1,11 @@
 # Core dependencies
-numpy==1.23.5  # Last version with np.bool alias
-pandas==1.5.3  # Compatible with numpy 1.23
+numpy==1.23.5
+pandas==1.5.3
 streamlit==1.31.0
 
 # AI/ML packages
-shap==0.41.0  # Version that works with numpy 1.23
-xgboost==1.7.5  # Compatible version
+shap==0.41.0
+xgboost==1.7.5
 dice-ml==0.9
 
 # Web/API frameworks
@@ -14,7 +14,7 @@ fastapi==0.104.1
 uvicorn==0.24.0.post1
 
 # Data processing
-scikit-learn==1.2.2  # Compatible version
+scikit-learn==1.2.2
 openai==0.28.1
 google-generativeai==0.7.2
 tiktoken==0.5.2
@@ -27,13 +27,14 @@ mplsoccer==1.1.10
 # Stats
 statsmodels==0.13.5
 
-# PyTorch (CPU)
-torch==2.0.1+cpu --index-url https://download.pytorch.org/whl/cpu
-torchvision==0.15.2+cpu --index-url https://download.pytorch.org/whl/cpu
-torchaudio==2.0.2+cpu --index-url https://download.pytorch.org/whl/cpu
+# PyTorch (corrected installation)
+torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
+torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cpu
+torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cpu
 
-# Utilities
+# Utilities (with version fixes)
 python-jose==3.3.0
 toml==0.10.2
 dill==0.3.7
 streamlit-extras==0.2.9
+rich==13.7.1  # Explicitly pinned to compatible version
